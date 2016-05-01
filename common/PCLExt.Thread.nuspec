@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2012/06/nuspec.xsd">
+    <metadata>
+        <id>PCLExt.Thread</id>
+        <version>1.0.3</version>
+        <title>PCL Extension - Thread API</title>
+        <authors>Aragas</authors>
+        <owners>Aragas</owners>
+        <licenseUrl>https://github.com/Aragas/PCLExt.Thread/blob/master/LICENSE</licenseUrl>
+        <projectUrl>https://github.com/Aragas/PCLExt.Thread</projectUrl>
+        <iconUrl>https://raw.githubusercontent.com/Aragas/PCLExt.Thread/master/common/sushi_64.png</iconUrl>
+        <requireLicenseAcceptance>false</requireLicenseAcceptance>
+        <description>PCL Extension provides a Thread implementation for .NET, Xamarin.iOS, Xamarin.Android. This makes it easier to create cross-platform .NET libraries and apps.</description>
+        <summary>PCL Extension provides a Thread implementation for PCL platforms</summary>
+        <tags>thread portable pcl android mac ios xamarin monoandroid monotouch</tags>
+        <dependencies>
+            <group />
+            <group targetFramework=".NETFramework4.5" />
+            <group targetFramework="Windows8.0" />
+            <group targetFramework="MonoAndroid0.0" />
+            <group targetFramework="Xamarin iOS0.0" />
+            <group targetFramework=".NETPortable0.0-net45+wp8+wpa81+win8+monoandroid+monotouch+Xamarin.iOS+Xamarin.Mac" />
+        </dependencies>
+    </metadata>
+    <files>
+        <file src="..\src\PCLExt.Thread.Abstractions\bin\Release\PCLExt.Thread.Abstractions.dll" target="lib\monoandroid\PCLExt.Thread.Abstractions.dll" />
+        <file src="..\src\PCLExt.Thread.Abstractions\bin\Release\PCLExt.Thread.Abstractions.XML" target="lib\monoandroid\PCLExt.Thread.Abstractions.xml" />
+        <file src="..\src\PCLExt.Thread.Android\bin\Release\PCLExt.Thread.dll" target="lib\monoandroid\PCLExt.Thread.dll" />
+        <file src="..\src\PCLExt.Thread.Android\bin\Release\PCLExt.Thread.XML" target="lib\monoandroid\PCLExt.Thread.xml" />
+        <file src="..\src\PCLExt.Thread.Abstractions\bin\Release\PCLExt.Thread.Abstractions.dll" target="lib\net45\PCLExt.Thread.Abstractions.dll" />
+        <file src="..\src\PCLExt.Thread.Abstractions\bin\Release\PCLExt.Thread.Abstractions.XML" target="lib\net45\PCLExt.Thread.Abstractions.xml" />
+        <file src="..\src\PCLExt.Thread.Desktop\bin\Release\PCLExt.Thread.dll" target="lib\net45\PCLExt.Thread.dll" />
+        <file src="..\src\PCLExt.Thread.Desktop\bin\Release\PCLExt.Thread.XML" target="lib\net45\PCLExt.Thread.xml" />
+        <file src="..\src\PCLExt.Thread.Abstractions\bin\Release\PCLExt.Thread.Abstractions.dll" target="lib\portable-net45+wp8+wpa81+win8+monoandroid+monotouch+Xamarin.iOS+Xamarin.Mac\PCLExt.Thread.Abstractions.dll" />
+        <file src="..\src\PCLExt.Thread.Abstractions\bin\Release\PCLExt.Thread.Abstractions.XML" target="lib\portable-net45+wp8+wpa81+win8+monoandroid+monotouch+Xamarin.iOS+Xamarin.Mac\PCLExt.Thread.Abstractions.xml" />
+        <file src="..\src\PCLExt.Thread\bin\Release\PCLExt.Thread.dll" target="lib\portable-net45+wp8+wpa81+win8+monoandroid+monotouch+Xamarin.iOS+Xamarin.Mac\PCLExt.Thread.dll" />
+        <file src="..\src\PCLExt.Thread\bin\Release\PCLExt.Thread.XML" target="lib\portable-net45+wp8+wpa81+win8+monoandroid+monotouch+Xamarin.iOS+Xamarin.Mac\PCLExt.Thread.xml" />
+        <file src="..\src\PCLExt.Thread.Abstractions\bin\Release\PCLExt.Thread.Abstractions.dll" target="lib\portable-Xamarin.iOS+Xamarin.Mac\PCLExt.Thread.Abstractions.dll" />
+        <file src="..\src\PCLExt.Thread.Abstractions\bin\Release\PCLExt.Thread.Abstractions.XML" target="lib\portable-Xamarin.iOS+Xamarin.Mac\PCLExt.Thread.Abstractions.xml" />
+        <file src="..\src\PCLExt.Thread.iOS\bin\Release\PCLExt.Thread.dll" target="lib\portable-Xamarin.iOS+Xamarin.Mac\PCLExt.Thread.dll" />
+        <file src="..\src\PCLExt.Thread.iOS\bin\Release\PCLExt.Thread.XML" target="lib\portable-Xamarin.iOS+Xamarin.Mac\PCLExt.Thread.xml" />
+    </files>
+</package>
