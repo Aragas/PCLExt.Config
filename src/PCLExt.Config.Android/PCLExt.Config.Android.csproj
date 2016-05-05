@@ -39,32 +39,30 @@
     <Reference Include="Mono.Android" />
     <Reference Include="mscorlib" />
     <Reference Include="Newtonsoft.Json, Version=8.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\Newtonsoft.Json.8.0.3\lib\portable-net40+sl5+wp80+win8+wpa81\Newtonsoft.Json.dll</HintPath>
-      <Private>True</Private>
+      <HintPath>$(SolutionDir)\packages\Newtonsoft.Json.8.0.3\lib\portable-net40+sl5+wp80+win8+wpa81\Newtonsoft.Json.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Xml" />
     <Reference Include="YamlDotNet, Version=3.8.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\YamlDotNet.3.8.0\lib\dotnet\YamlDotNet.dll</HintPath>
-      <Private>True</Private>
+      <HintPath>$(SolutionDir)\packages\YamlDotNet.3.8.0\lib\dotnet\YamlDotNet.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="..\..\common\CommonAssemblyInfo.cs">
+    <Compile Include="$(SolutionDir)\common\CommonAssemblyInfo.cs">
       <Link>Properties\CommonAssemblyInfo.cs</Link>
     </Compile>
-    <Compile Include="..\PCLExt.Config.Desktop\DesktopJsonConfig.cs">
+    <Compile Include="$(SolutionDir)\src\PCLExt.Config.Desktop\DesktopJsonConfig.cs">
       <Link>DesktopJsonConfig.cs</Link>
     </Compile>
-    <Compile Include="..\PCLExt.Config.Desktop\DesktopYamlConfig.cs">
+    <Compile Include="$(SolutionDir)\src\PCLExt.Config.Desktop\DesktopYamlConfig.cs">
       <Link>DesktopYamlConfig.cs</Link>
     </Compile>
-    <Compile Include="..\PCLExt.Config.Desktop\YamlSerialization.cs">
+    <Compile Include="$(SolutionDir)\src\PCLExt.Config.Desktop\YamlSerialization.cs">
       <Link>YamlSerialization.cs</Link>
     </Compile>
-    <Compile Include="..\PCLExt.Config\Config.cs">
+    <Compile Include="$(SolutionDir)\src\PCLExt.Config\Config.cs">
       <Link>Config.cs</Link>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -72,7 +70,7 @@
   <ItemGroup>
     <ProjectReference Include="..\PCLExt.Config.Abstractions\PCLExt.Config.Abstractions.csproj">
       <Project>{3f8d0494-6ee2-47fe-b263-f09a5ea3d0b3}</Project>
-      <Name>PCLExt.Thread.Abstractions</Name>
+      <Name>PCLExt.Config.Abstractions</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
