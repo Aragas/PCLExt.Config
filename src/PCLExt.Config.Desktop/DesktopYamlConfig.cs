@@ -53,7 +53,7 @@ namespace PCLExt.Config
 
         private static void CopyAll<T>(T source, T target)
         {
-            var type = typeof(T);
+            var type = target.GetType();
             foreach (var sourceProperty in type.GetRuntimeProperties().Where(prop => prop.CanRead && prop.GetMethod.IsPublic && prop.CustomAttributes.All(att => att.AttributeType != typeof(YamlIgnoreAttribute))))
             {
                 var targetProperty = type.GetRuntimeProperty(sourceProperty.Name);
