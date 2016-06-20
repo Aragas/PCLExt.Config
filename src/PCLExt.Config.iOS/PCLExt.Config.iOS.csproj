@@ -66,7 +66,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\PCLExt.Config.Abstractions\PCLExt.Config.Abstractions.csproj">
+    <ProjectReference Include="$(SolutionDir)\src\PCLExt.Config.Abstractions\PCLExt.Config.Abstractions.csproj">
       <Project>{3f8d0494-6ee2-47fe-b263-f09a5ea3d0b3}</Project>
       <Name>PCLExt.Config.Abstractions</Name>
     </ProjectReference>

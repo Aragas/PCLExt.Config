@@ -35,7 +35,7 @@ namespace PCLExt.Config
         {
             try
             {
-                var source = (T) new Deserializer(new LambdaObjectFactory(Factory)).Deserialize(new StringReader(value), typeof(T));
+                var source = (T) new Deserializer(new LambdaObjectFactory(Factory)).Deserialize(new StringReader(value), target.GetType());
                 CopyAll(source, target);
             }
             catch (YamlException ex) { throw new ConfigDeserializingException(string.Empty, ex); }
