@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2012/06/nuspec.xsd">
     <metadata>
         <id>PCLExt.Config</id>
-        <version>1.0.4</version>
+        <version>1.0.7</version>
         <title>PCL Extension - Config API</title>
         <authors>Aragas</authors>
         <owners>Aragas</owners>
@@ -15,15 +15,15 @@
         <tags>config yaml json portable pcl android mac ios xamarin monoandroid monotouch</tags>
         <dependencies>
             <group targetFramework=".NETFramework4.5">
-                <dependency id="Newtonsoft.Json" version="8.0.3" />
+                <dependency id="Newtonsoft.Json" version="9.0.1" />
                 <dependency id="YamlDotNet" version="3.8.0" />
             </group>
             <group targetFramework="MonoAndroid0.0">
-                <dependency id="Newtonsoft.Json" version="8.0.3" />
+                <dependency id="Newtonsoft.Json" version="9.0.1" />
                 <dependency id="YamlDotNet" version="3.8.0" />
             </group>
-            <group targetFramework="xamarinios0.0">
-                <dependency id="Newtonsoft.Json" version="8.0.3" />
+            <group targetFramework="Xamarin iOs0.0">
+                <dependency id="Newtonsoft.Json" version="9.0.1" />
                 <dependency id="YamlDotNet" version="3.8.0" />
             </group>
         </dependencies>

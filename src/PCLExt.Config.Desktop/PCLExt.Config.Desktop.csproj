@@ -32,8 +32,14 @@
     <DocumentationFile>bin\Release\PCLExt.Config.xml</DocumentationFile>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Newtonsoft.Json, Version=8.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
-      <HintPath>$(SolutionDir)\packages\Newtonsoft.Json.8.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+    <Reference Include="Newtonsoft.Json, Version=9.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>$(SolutionDir)\packages\Newtonsoft.Json.9.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="PCLExt.FileStorage, Version=1.0.3.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>$(SolutionDir)\packages\PCLExt.FileStorage.1.0.5\lib\net45\PCLExt.FileStorage.dll</HintPath>
+    </Reference>
+    <Reference Include="PCLExt.FileStorage.Abstractions, Version=1.0.3.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>$(SolutionDir)\packages\PCLExt.FileStorage.1.0.5\lib\net45\PCLExt.FileStorage.Abstractions.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -54,6 +60,12 @@
     <Compile Include="$(SolutionDir)\src\PCLExt.Config\Config.cs">
       <Link>Config.cs</Link>
     </Compile>
+    <Compile Include="$(SolutionDir)\src\PCLExt.Config\Extensions\FileSystemExtensions.cs">
+      <Link>Extensions\FileSystemExtensions.cs</Link>
+    </Compile>
+    <Compile Include="$(SolutionDir)\src\PCLExt.Config\Settings.cs">
+      <Link>Settings.cs</Link>
+    </Compile>
     <Compile Include="DesktopJsonConfig.cs" />
     <Compile Include="DesktopYamlConfig.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -64,6 +76,9 @@
       <Project>{3f8d0494-6ee2-47fe-b263-f09a5ea3d0b3}</Project>
       <Name>PCLExt.Config.Abstractions</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
