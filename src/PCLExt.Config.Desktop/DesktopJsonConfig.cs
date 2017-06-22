@@ -10,10 +10,8 @@ using Newtonsoft.Json.Serialization;
 
 namespace PCLExt.Config
 {
-    public class DesktopJsonConfig : IConfig
+    internal class DesktopJsonConfig : IConfig
     {
-        public string FileExtension => "json";
-
         private JsonSerializerSettings Settings { get; }
 
 
@@ -45,24 +43,30 @@ namespace PCLExt.Config
         }
     }
 
-    public class ConfigIgnoreContractResolver : DefaultContractResolver
+    internal class ConfigIgnoreContractResolver : DefaultContractResolver
     {
-        private Type AttributeToIgnore { get; } = typeof(ConfigIgnoreAttribute);
+        protected override IList<JsonProperty> CreateProperties(Type type, MemberSerialization memberSerialization) =>
+            type.GetProperties()
+                .Where(p => p.GetCustomAttribute<ConfigIgnoreAttribute>() == null)
+                .Select(p =>
+                {
+                    var descriptor = new JsonProperty()
+                    {
+                        PropertyName = p.Name,
+                        PropertyType = p.PropertyType,
+                        Readable = true,
+                        Writable = true,
+                        ValueProvider = CreateMemberValueProvider(p)
+                    };
 
-        protected override IList<JsonProperty> CreateProperties(Type type, MemberSerialization memberSerialization)
-        {
-            var list = type.GetProperties()
-                        .Where(x => x.GetCustomAttributes().All(a => a.GetType() != AttributeToIgnore))
-                        .Select(p => new JsonProperty()
-                        {
-                            PropertyName = p.Name,
-                            PropertyType = p.PropertyType,
-                            Readable = true,
-                            Writable = true,
-                            ValueProvider = CreateMemberValueProvider(p)
-                        }).ToList();
+                    var member = p.GetCustomAttribute<ConfigNameAttribute>();
+                    if (member != null)
+                    {
+                        if (!string.IsNullOrEmpty(member.Name))
+                            descriptor.PropertyName = member.Name;
+                    }
 
-            return list;
-        }
+                    return descriptor;
+                }).ToList();
     }
 }

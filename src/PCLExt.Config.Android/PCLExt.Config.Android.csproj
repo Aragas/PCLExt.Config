@@ -36,51 +36,59 @@
     <DocumentationFile>bin\Release\PCLExt.Config.xml</DocumentationFile>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Mono.Android" />
     <Reference Include="mscorlib" />
-    <Reference Include="Newtonsoft.Json, Version=9.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
-      <HintPath>$(SolutionDir)\packages\Newtonsoft.Json.9.0.1\lib\portable-net45+wp80+win8+wpa81\Newtonsoft.Json.dll</HintPath>
+    <Reference Include="Newtonsoft.Json, Version=10.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Newtonsoft.Json.10.0.2\lib\netstandard1.3\Newtonsoft.Json.dll</HintPath>
     </Reference>
-    <Reference Include="PCLExt.FileStorage, Version=1.0.3.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>$(SolutionDir)\packages\PCLExt.FileStorage.1.0.5\lib\monoandroid\PCLExt.FileStorage.dll</HintPath>
+    <Reference Include="PCLExt.FileStorage, Version=1.2.0.1, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\PCLExt.FileStorage.1.2.0.1\lib\MonoAndroid10\PCLExt.FileStorage.dll</HintPath>
     </Reference>
-    <Reference Include="PCLExt.FileStorage.Abstractions, Version=1.0.3.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>$(SolutionDir)\packages\PCLExt.FileStorage.1.0.5\lib\monoandroid\PCLExt.FileStorage.Abstractions.dll</HintPath>
+    <Reference Include="PCLExt.FileStorage.Abstractions, Version=1.2.0.1, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\PCLExt.FileStorage.1.2.0.1\lib\MonoAndroid10\PCLExt.FileStorage.Abstractions.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
-    <Reference Include="System.Xml.Linq" />
-    <Reference Include="System.Xml" />
-    <Reference Include="YamlDotNet, Version=3.8.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>$(SolutionDir)\packages\YamlDotNet.3.8.0\lib\dotnet\YamlDotNet.dll</HintPath>
+    <Reference Include="System.IO.Compression" />
+    <Reference Include="YamlDotNet, Version=4.2.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\YamlDotNet.4.2.1\lib\netstandard1.3\YamlDotNet.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="$(SolutionDir)\common\CommonAssemblyInfo.cs">
+    <Compile Include="..\..\common\CommonAssemblyInfo.cs">
       <Link>Properties\CommonAssemblyInfo.cs</Link>
     </Compile>
-    <Compile Include="$(SolutionDir)\src\PCLExt.Config.Desktop\DesktopJsonConfig.cs">
+    <Compile Include="..\PCLExt.Config.Desktop\DesktopJsonConfig.cs">
       <Link>DesktopJsonConfig.cs</Link>
     </Compile>
-    <Compile Include="$(SolutionDir)\src\PCLExt.Config.Desktop\DesktopYamlConfig.cs">
+    <Compile Include="..\PCLExt.Config.Desktop\DesktopYamlConfig.cs">
       <Link>DesktopYamlConfig.cs</Link>
     </Compile>
-    <Compile Include="$(SolutionDir)\src\PCLExt.Config.Desktop\YamlSerialization.cs">
-      <Link>YamlSerialization.cs</Link>
+    <Compile Include="..\PCLExt.Config.Portable\Extensions\YamlExtensions.cs">
+      <Link>Extensions\YamlExtensions.cs</Link>
     </Compile>
-    <Compile Include="$(SolutionDir)\src\PCLExt.Config\Config.cs">
+    <Compile Include="..\PCLExt.Config.Portable\Config.cs">
       <Link>Config.cs</Link>
     </Compile>
-    <Compile Include="$(SolutionDir)\src\PCLExt.Config\Extensions\FileSystemExtensions.cs">
+    <Compile Include="..\PCLExt.Config.Portable\Extensions\FileSystemExtensions.cs">
       <Link>Extensions\FileSystemExtensions.cs</Link>
     </Compile>
-    <Compile Include="$(SolutionDir)\src\PCLExt.Config\Settings.cs">
+    <Compile Include="..\PCLExt.Config.Portable\Settings.cs">
       <Link>Settings.cs</Link>
+    </Compile>
+    <Compile Include="..\PCLExt.Config.Portable\Extensions\ConfigTypeExtensions.cs">
+      <Link>Extensions\ConfigTypeExtensions.cs</Link>
+    </Compile>
+    <Compile Include="..\PCLExt.Config.Portable\IConfigFile.cs">
+      <Link>IConfigFile.cs</Link>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="$(SolutionDir)\src\PCLExt.Config.Abstractions\PCLExt.Config.Abstractions.csproj">
+    <ProjectReference Include="..\PCLExt.Config.Portable.Abstractions\PCLExt.Config.Portable.Abstractions.csproj">
+      <Project>{3f8d0494-6ee2-47fe-b263-f09a5ea3d0b3}</Project>
+      <Name>PCLExt.Config.Portable.Abstractions</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\PCLExt.Config.Portable.Abstractions\PCLExt.Config.Portable.Abstractions.csproj">
       <Project>{3f8d0494-6ee2-47fe-b263-f09a5ea3d0b3}</Project>
       <Name>PCLExt.Config.Abstractions</Name>
     </ProjectReference>

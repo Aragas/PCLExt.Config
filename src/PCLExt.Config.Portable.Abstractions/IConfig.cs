@@ -7,6 +7,14 @@ namespace PCLExt.Config
     [AttributeUsage(AttributeTargets.Field | AttributeTargets.Property, AllowMultiple = false)]
     public sealed class ConfigIgnoreAttribute : Attribute { }
 
+    [AttributeUsage(AttributeTargets.Field | AttributeTargets.Property, AllowMultiple = false)]
+    public sealed class ConfigNameAttribute : Attribute
+    {
+        public string Name { get; }
+
+        public ConfigNameAttribute(string name) { Name = name; }
+    }
+
     public class ConfigException : Exception
     {
         public ConfigException() { }
@@ -28,11 +36,8 @@ namespace PCLExt.Config
 
     public interface IConfig
     {
-        string FileExtension { get; }
-
         string Serialize<T>(T target);
         T Deserialize<T>(string value);
         void PopulateObject<T>(string value, T target);
-
     }
 }

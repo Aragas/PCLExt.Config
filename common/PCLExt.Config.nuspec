@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2012/06/nuspec.xsd">
     <metadata>
         <id>PCLExt.Config</id>
-        <version>1.0.7</version>
+        <version>1.2.0</version>
         <title>PCL Extension - Config API</title>
         <authors>Aragas</authors>
         <owners>Aragas</owners>
@@ -10,40 +10,54 @@
         <projectUrl>https://github.com/Aragas/PCLExt.Config</projectUrl>
         <iconUrl>https://raw.githubusercontent.com/Aragas/PCLExt.Config/master/common/sushi_64.png</iconUrl>
         <requireLicenseAcceptance>false</requireLicenseAcceptance>
-        <description>PCL Extension provides a config implementation for .NET, Xamarin.iOS, Xamarin.Android. This makes it easier to create cross-platform .NET libraries and apps.</description>
+        <description>PCL Extension provides a config implementation for .NET, Xamarin.iOS, Xamarin.Android. This makes it easier to create cross-platform .NET libraries and apps. Supports .NET Standard now.</description>
         <summary>PCL Extension provides a config implementation for PCL platforms</summary>
-        <tags>config yaml json portable pcl android mac ios xamarin monoandroid monotouch</tags>
+        <tags>config yaml json portable pcl android mac ios xamarin monoandroid monotouch core netcore netstandard</tags>
         <dependencies>
             <group targetFramework=".NETFramework4.5">
-                <dependency id="Newtonsoft.Json" version="9.0.1" />
-                <dependency id="YamlDotNet" version="3.8.0" />
+                <dependency id="Newtonsoft.Json" version="10.0.2" />
+                <dependency id="YamlDotNet" version="4.2.1" />
+                <dependency id="PCLExt.FileStorage" version="1.2.0.1" />
             </group>
-            <group targetFramework="MonoAndroid0.0">
-                <dependency id="Newtonsoft.Json" version="9.0.1" />
-                <dependency id="YamlDotNet" version="3.8.0" />
+            <group targetFramework="MonoAndroid1.0">
+                <dependency id="Newtonsoft.Json" version="10.0.2" />
+                <dependency id="YamlDotNet" version="4.2.1" />
+                <dependency id="PCLExt.FileStorage" version="1.2.0.1" />
             </group>
-            <group targetFramework="Xamarin iOs0.0">
-                <dependency id="Newtonsoft.Json" version="9.0.1" />
-                <dependency id="YamlDotNet" version="3.8.0" />
+            <group targetFramework="Xamarin.iOS1.0">
+                <dependency id="Newtonsoft.Json" version="10.0.2" />
+                <dependency id="YamlDotNet" version="4.2.1" />
+                <dependency id="PCLExt.FileStorage" version="1.2.0.1" />
+            </group>
+			<group targetFramework="netstandard1.3">
+                <dependency id="Newtonsoft.Json" version="10.0.2" />
+                <dependency id="YamlDotNet" version="4.2.1" />
+                <dependency id="PCLExt.FileStorage" version="1.2.0.1" />
             </group>
         </dependencies>
     </metadata>
     <files>
-        <file src="..\src\PCLExt.Config.Abstractions\bin\Release\PCLExt.Config.Abstractions.dll" target="lib\monoandroid\PCLExt.Config.Abstractions.dll" />
-        <file src="..\src\PCLExt.Config.Abstractions\bin\Release\PCLExt.Config.Abstractions.xml" target="lib\monoandroid\PCLExt.Config.Abstractions.xml" />
-        <file src="..\src\PCLExt.Config.Android\bin\Release\PCLExt.Config.dll" target="lib\monoandroid\PCLExt.Config.dll" />
-        <file src="..\src\PCLExt.Config.Android\bin\Release\PCLExt.Config.xml" target="lib\monoandroid\PCLExt.Config.xml" />
-        <file src="..\src\PCLExt.Config.Abstractions\bin\Release\PCLExt.Config.Abstractions.dll" target="lib\MonoTouch\PCLExt.Config.Abstractions.dll" />
-        <file src="..\src\PCLExt.Config.Abstractions\bin\Release\PCLExt.Config.Abstractions.xml" target="lib\MonoTouch\PCLExt.Config.Abstractions.xml" />
-        <file src="..\src\PCLExt.Config.iOS\bin\Release\PCLExt.Config.dll" target="lib\MonoTouch\PCLExt.Config.dll" />
-        <file src="..\src\PCLExt.Config.iOS\bin\Release\PCLExt.Config.xml" target="lib\MonoTouch\PCLExt.Config.xml" />
-        <file src="..\src\PCLExt.Config.Abstractions\bin\Release\PCLExt.Config.Abstractions.dll" target="lib\net45\PCLExt.Config.Abstractions.dll" />
-        <file src="..\src\PCLExt.Config.Abstractions\bin\Release\PCLExt.Config.Abstractions.xml" target="lib\net45\PCLExt.Config.Abstractions.xml" />
+        <file src="..\src\PCLExt.Config.Portable.Abstractions\bin\Release\PCLExt.Config.Abstractions.dll" target="lib\MonoAndroid10\PCLExt.Config.Abstractions.dll" />
+        <file src="..\src\PCLExt.Config.Portable.Abstractions\bin\Release\PCLExt.Config.Abstractions.xml" target="lib\MonoAndroid10\PCLExt.Config.Abstractions.xml" />	
+        <file src="..\src\PCLExt.Config.Android\bin\Release\PCLExt.Config.dll" target="lib\MonoAndroid10\PCLExt.Config.dll" />
+        <file src="..\src\PCLExt.Config.Android\bin\Release\PCLExt.Config.xml" target="lib\MonoAndroid10\PCLExt.Config.xml" />
+		
+        <file src="..\src\PCLExt.Config.Portable.Abstractions\bin\Release\PCLExt.Config.Abstractions.dll" target="lib\net45\PCLExt.Config.Abstractions.dll" />
+        <file src="..\src\PCLExt.Config.Portable.Abstractions\bin\Release\PCLExt.Config.Abstractions.xml" target="lib\net45\PCLExt.Config.Abstractions.xml" />
         <file src="..\src\PCLExt.Config.Desktop\bin\Release\PCLExt.Config.dll" target="lib\net45\PCLExt.Config.dll" />
         <file src="..\src\PCLExt.Config.Desktop\bin\Release\PCLExt.Config.xml" target="lib\net45\PCLExt.Config.xml" />
-        <file src="..\src\PCLExt.Config.Abstractions\bin\Release\PCLExt.Config.Abstractions.dll" target="lib\portable-net45+wp8+wpa81+win8+monoandroid+monotouch+Xamarin.iOS+Xamarin.Mac\PCLExt.Config.Abstractions.dll" />
-        <file src="..\src\PCLExt.Config.Abstractions\bin\Release\PCLExt.Config.Abstractions.xml" target="lib\portable-net45+wp8+wpa81+win8+monoandroid+monotouch+Xamarin.iOS+Xamarin.Mac\PCLExt.Config.Abstractions.xml" />
-        <file src="..\src\PCLExt.Config\bin\Release\PCLExt.Config.dll" target="lib\portable-net45+wp8+wpa81+win8+monoandroid+monotouch+Xamarin.iOS+Xamarin.Mac\PCLExt.Config.dll" />
-        <file src="..\src\PCLExt.Config\bin\Release\PCLExt.Config.xml" target="lib\portable-net45+wp8+wpa81+win8+monoandroid+monotouch+Xamarin.iOS+Xamarin.Mac\PCLExt.Config.xml" />
+		
+		<file src="..\src\PCLExt.Config.Core\bin\Release\netstandard1.3\PCLExt.Config.dll" target="lib\netstandard1.3\PCLExt.Config.dll" />
+        <file src="..\src\PCLExt.Config.Core\bin\Release\netstandard1.3\PCLExt.Config.xml" target="lib\netstandard1.3\PCLExt.Config.xml" />
+		
+        <file src="..\src\PCLExt.Config.Portable.Abstractions\bin\Release\PCLExt.Config.Abstractions.dll" target="lib\portable-net45+win8+wpa81\PCLExt.Config.Abstractions.dll" />
+        <file src="..\src\PCLExt.Config.Portable.Abstractions\bin\Release\PCLExt.Config.Abstractions.xml" target="lib\portable-net45+win8+wpa81\PCLExt.Config.Abstractions.xml" />
+        <file src="..\src\PCLExt.Config.Portable\bin\Release\PCLExt.Config.dll" target="lib\portable-net45+win8+wpa81\PCLExt.Config.dll" />
+        <file src="..\src\PCLExt.Config.Portable\bin\Release\PCLExt.Config.xml" target="lib\portable-net45+win8+wpa81\PCLExt.Config.xml" />
+		
+        <file src="..\src\PCLExt.Config.Portable.Abstractions\bin\Release\PCLExt.Config.Abstractions.dll" target="lib\Xamarin.iOS10\PCLExt.Config.Abstractions.dll" />
+        <file src="..\src\PCLExt.Config.Portable.Abstractions\bin\Release\PCLExt.Config.Abstractions.xml" target="lib\Xamarin.iOS10\PCLExt.Config.Abstractions.xml" />
+        <file src="..\src\PCLExt.Config.iOS\bin\Release\PCLExt.Config.dll" target="lib\Xamarin.iOS10\PCLExt.Config.dll" />
+        <file src="..\src\PCLExt.Config.iOS\bin\Release\PCLExt.Config.xml" target="lib\Xamarin.iOS10\PCLExt.Config.xml" />
     </files>
 </package>

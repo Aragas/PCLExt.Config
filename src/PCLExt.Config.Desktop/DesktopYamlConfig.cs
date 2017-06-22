@@ -1,26 +1,31 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Reflection;
 using System.Runtime.Serialization;
 
+#if CORE
+using PCLExt.Config.Core.Extensions;
+#endif
+
 using YamlDotNet.Core;
 using YamlDotNet.Serialization;
 using YamlDotNet.Serialization.ObjectFactories;
+using YamlDotNet.Serialization.TypeInspectors;
 
 namespace PCLExt.Config
 {
-    public class DesktopYamlConfig : IConfig
+    internal class DesktopYamlConfig : IConfig
     {
-        public string FileExtension => "yml";
-
         public string Serialize<T>(T target)
         {
             try
             {
                 using (var stringWriter = new StringWriter())
                 {
-                    new YamlSerializer(SerializationOptions.EmitDefaults).Serialize(stringWriter, target);
+                    var serializer = new SerializerBuilder().EmitDefaults().WithTypeInspector(inspector => new ConfigTypeInspector(inspector)).Build();
+                    serializer.Serialize(stringWriter, target);
                     return stringWriter.ToString();
                 }
             }
@@ -28,14 +33,19 @@ namespace PCLExt.Config
         }
         public T Deserialize<T>(string value)
         {
-            try { return (T) new Deserializer().Deserialize(new StringReader(value), typeof(T)); }
+            try
+            {
+                var deserializer = new DeserializerBuilder().WithTypeInspector(inspector => new ConfigTypeInspector(inspector)).Build();
+                return (T) deserializer.Deserialize(new StringReader(value), typeof(T));
+            }
             catch (YamlException ex) { throw new ConfigDeserializingException(string.Empty, ex); }
         }
         public void PopulateObject<T>(string value, T target)
         {
             try
             {
-                var source = (T) new Deserializer(new LambdaObjectFactory(Factory)).Deserialize(new StringReader(value), target.GetType());
+                var deserializer = new DeserializerBuilder().WithObjectFactory(new LambdaObjectFactory(Factory)).Build();
+                var source = (T) deserializer.Deserialize(new StringReader(value), target.GetType());
                 CopyAll(source, target);
             }
             catch (YamlException ex) { throw new ConfigDeserializingException(string.Empty, ex); }
@@ -48,7 +58,12 @@ namespace PCLExt.Config
             else if (type.HasDefaultConstructor())
                 return Activator.CreateInstance(type);
             else
-                return FormatterServices.GetUninitializedObject(type);
+#if CORE
+            throw new NotImplementedException(@"This functionality is not implemented in the current version of this .NET Standard.
+You should wait for .NET Standard 2.0.");
+#else
+            return FormatterServices.GetUninitializedObject(type);
+#endif
         }
 
         private static void CopyAll<T>(T source, T target)
@@ -66,5 +81,30 @@ namespace PCLExt.Config
                 targetField.SetValue(target, sourceField.GetValue(source));
             }
         }
+    }
+
+    internal class ConfigTypeInspector : TypeInspectorSkeleton
+    {
+        private readonly ITypeInspector _innerTypeInspector;
+
+        public ConfigTypeInspector(ITypeInspector typeInspector) { _innerTypeInspector = typeInspector; }
+
+        public override IEnumerable<IPropertyDescriptor> GetProperties(Type type, object container) =>
+            _innerTypeInspector.GetProperties(type, container)
+                .Where(p => p.GetCustomAttribute<ConfigIgnoreAttribute>() == null)
+                .Select(p =>
+                {
+                    var descriptor = new PropertyDescriptor(p);
+
+                    var member = p.GetCustomAttribute<ConfigNameAttribute>();
+                    if (member != null)
+                    {
+                        if (!string.IsNullOrEmpty(member.Name))
+                            descriptor.Name = member.Name;
+
+                    }
+
+                    return (IPropertyDescriptor) descriptor;
+                });
     }
 }
