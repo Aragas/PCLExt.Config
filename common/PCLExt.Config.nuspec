@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2012/06/nuspec.xsd">
     <metadata>
         <id>PCLExt.Config</id>
-        <version>1.2.0</version>
+        <version>1.2.1</version>
         <title>PCL Extension - Config API</title>
         <authors>Aragas</authors>
         <owners>Aragas</owners>
@@ -29,10 +29,10 @@
                 <dependency id="YamlDotNet" version="4.2.1" />
                 <dependency id="PCLExt.FileStorage" version="1.2.0.1" />
             </group>
-			<group targetFramework="netstandard1.3">
+			<group targetFramework="netstandard2.0">
                 <dependency id="Newtonsoft.Json" version="10.0.2" />
                 <dependency id="YamlDotNet" version="4.2.1" />
-                <dependency id="PCLExt.FileStorage" version="1.2.0.1" />
+                <dependency id="PCLExt.FileStorage" version="1.2.1.1" />
             </group>
         </dependencies>
     </metadata>
@@ -47,8 +47,8 @@
         <file src="..\src\PCLExt.Config.Desktop\bin\Release\PCLExt.Config.dll" target="lib\net45\PCLExt.Config.dll" />
         <file src="..\src\PCLExt.Config.Desktop\bin\Release\PCLExt.Config.xml" target="lib\net45\PCLExt.Config.xml" />
 		
-		<file src="..\src\PCLExt.Config.Core\bin\Release\netstandard1.3\PCLExt.Config.dll" target="lib\netstandard1.3\PCLExt.Config.dll" />
-        <file src="..\src\PCLExt.Config.Core\bin\Release\netstandard1.3\PCLExt.Config.xml" target="lib\netstandard1.3\PCLExt.Config.xml" />
+		<file src="..\src\PCLExt.Config.Core\bin\Release\netstandard2.0\PCLExt.Config.dll" target="lib\netstandard2.0\PCLExt.Config.dll" />
+        <file src="..\src\PCLExt.Config.Core\bin\Release\netstandard2.0\PCLExt.Config.xml" target="lib\netstandard2.0\PCLExt.Config.xml" />
 		
         <file src="..\src\PCLExt.Config.Portable.Abstractions\bin\Release\PCLExt.Config.Abstractions.dll" target="lib\portable-net45+win8+wpa81\PCLExt.Config.Abstractions.dll" />
         <file src="..\src\PCLExt.Config.Portable.Abstractions\bin\Release\PCLExt.Config.Abstractions.xml" target="lib\portable-net45+win8+wpa81\PCLExt.Config.Abstractions.xml" />

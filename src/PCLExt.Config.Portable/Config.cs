@@ -14,7 +14,7 @@ You should reference the PCLExt.Config NuGet package from your main application 
 
         public static IConfig Create(ConfigType type)
         {
-#if DESKTOP || ANDROID || __IOS__ || MAC
+#if DESKTOP || ANDROID || __IOS__ || MAC || NETSTANDARD2_0
             switch (type)
             {
                 case ConfigType.JsonConfig:

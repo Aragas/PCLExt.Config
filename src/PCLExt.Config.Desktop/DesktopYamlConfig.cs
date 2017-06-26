@@ -5,10 +5,6 @@ using System.Linq;
 using System.Reflection;
 using System.Runtime.Serialization;
 
-#if CORE
-using PCLExt.Config.Core.Extensions;
-#endif
-
 using YamlDotNet.Core;
 using YamlDotNet.Serialization;
 using YamlDotNet.Serialization.ObjectFactories;
@@ -55,15 +51,10 @@ namespace PCLExt.Config
         {
             if (type == typeof(string))
                 return string.Empty;
-            else if (type.HasDefaultConstructor())
+            else if (type.GetTypeInfo().HasDefaultConstructor())
                 return Activator.CreateInstance(type);
             else
-#if CORE
-            throw new NotImplementedException(@"This functionality is not implemented in the current version of this .NET Standard.
-You should wait for .NET Standard 2.0.");
-#else
-            return FormatterServices.GetUninitializedObject(type);
-#endif
+                return FormatterServices.GetUninitializedObject(type);
         }
 
         private static void CopyAll<T>(T source, T target)

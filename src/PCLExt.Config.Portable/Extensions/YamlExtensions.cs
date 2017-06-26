@@ -8,7 +8,7 @@ namespace PCLExt.Config
 
     internal static class YamlExtensions
     {
-#if DESKTOP || ANDROID || __IOS__ || MAC
+#if DESKTOP || ANDROID || __IOS__ || MAC || NETSTANDARD2_0
         public static bool HasDefaultConstructor(this Type type) => type.GetTypeInfo().IsValueType || type.GetConstructor(BindingFlags.Public | BindingFlags.Instance, null, Type.EmptyTypes, null) != null;
 
         public static Type GetImplementedGenericInterface(Type type, Type genericInterfaceType) => GetImplementedInterfaces(type).FirstOrDefault(interfacetype => interfacetype.IsGenericType && interfacetype.GetGenericTypeDefinition() == genericInterfaceType);
