@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2012/06/nuspec.xsd">
     <metadata>
         <id>PCLExt.Config</id>
-        <version>1.2.1</version>
+        <version>1.2.1.1</version>
         <title>PCL Extension - Config API</title>
         <authors>Aragas</authors>
         <owners>Aragas</owners>
@@ -15,22 +15,22 @@
         <tags>config yaml json portable pcl android mac ios xamarin monoandroid monotouch core netcore netstandard</tags>
         <dependencies>
             <group targetFramework=".NETFramework4.5">
-                <dependency id="Newtonsoft.Json" version="10.0.2" />
+                <dependency id="Newtonsoft.Json" version="10.0.3" />
                 <dependency id="YamlDotNet" version="4.2.1" />
-                <dependency id="PCLExt.FileStorage" version="1.2.0.1" />
+                <dependency id="PCLExt.FileStorage" version="1.2.1.1" />
             </group>
             <group targetFramework="MonoAndroid1.0">
-                <dependency id="Newtonsoft.Json" version="10.0.2" />
+                <dependency id="Newtonsoft.Json" version="10.0.3" />
                 <dependency id="YamlDotNet" version="4.2.1" />
-                <dependency id="PCLExt.FileStorage" version="1.2.0.1" />
+                <dependency id="PCLExt.FileStorage" version="1.2.1.1" />
             </group>
             <group targetFramework="Xamarin.iOS1.0">
-                <dependency id="Newtonsoft.Json" version="10.0.2" />
+                <dependency id="Newtonsoft.Json" version="10.0.3" />
                 <dependency id="YamlDotNet" version="4.2.1" />
-                <dependency id="PCLExt.FileStorage" version="1.2.0.1" />
+                <dependency id="PCLExt.FileStorage" version="1.2.1.1" />
             </group>
 			<group targetFramework="netstandard2.0">
-                <dependency id="Newtonsoft.Json" version="10.0.2" />
+                <dependency id="Newtonsoft.Json" version="10.0.3" />
                 <dependency id="YamlDotNet" version="4.2.1" />
                 <dependency id="PCLExt.FileStorage" version="1.2.1.1" />
             </group>
