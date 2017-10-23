@@ -7,6 +7,7 @@ using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using Newtonsoft.Json.Serialization;
 
+using PCLExt.Config.Exceptions;
 
 namespace PCLExt.Config
 {

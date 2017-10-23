@@ -5,6 +5,8 @@ using System.Linq;
 using System.Reflection;
 using System.Runtime.Serialization;
 
+using PCLExt.Config.Exceptions;
+
 using YamlDotNet.Core;
 using YamlDotNet.Serialization;
 using YamlDotNet.Serialization.ObjectFactories;
@@ -51,7 +53,7 @@ namespace PCLExt.Config
         {
             if (type == typeof(string))
                 return string.Empty;
-            else if (type.GetTypeInfo().HasDefaultConstructor())
+            else if (type.IsValueType || type.GetConstructor(Type.EmptyTypes) != null) // HasDefaultConstructor
                 return Activator.CreateInstance(type);
             else
                 return FormatterServices.GetUninitializedObject(type);

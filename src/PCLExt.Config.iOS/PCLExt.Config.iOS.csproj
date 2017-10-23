@@ -36,64 +36,60 @@
     <DefineConstants>__UNIFIED__;__MOBILE__;__IOS__;COMMON;</DefineConstants>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Newtonsoft.Json, Version=10.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\Newtonsoft.Json.10.0.3\lib\netstandard1.3\Newtonsoft.Json.dll</HintPath>
+    <Reference Include="Newtonsoft.Json, Version=9.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Newtonsoft.Json.9.0.1\lib\portable-net45+wp80+win8+wpa81\Newtonsoft.Json.dll</HintPath>
     </Reference>
-    <Reference Include="PCLExt.FileStorage, Version=1.2.1.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\PCLExt.FileStorage.1.2.1.1\lib\Xamarin.iOS10\PCLExt.FileStorage.dll</HintPath>
+    <Reference Include="PCLExt.FileStorage, Version=1.3.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\PCLExt.FileStorage.1.3.1.0\lib\Xamarin.iOS\PCLExt.FileStorage.dll</HintPath>
     </Reference>
-    <Reference Include="PCLExt.FileStorage.Abstractions, Version=1.2.1.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\PCLExt.FileStorage.1.2.1.1\lib\Xamarin.iOS10\PCLExt.FileStorage.Abstractions.dll</HintPath>
+    <Reference Include="PCLExt.FileStorage.Abstractions, Version=1.3.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\PCLExt.FileStorage.1.3.1.0\lib\Xamarin.iOS\PCLExt.FileStorage.Abstractions.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.IO.Compression" />
-    <Reference Include="YamlDotNet, Version=4.2.1.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\YamlDotNet.4.2.1\lib\netstandard1.3\YamlDotNet.dll</HintPath>
+    <Reference Include="YamlDotNet, Version=4.2.2.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\YamlDotNet.4.2.2\lib\netstandard1.3\YamlDotNet.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="..\..\common\CommonAssemblyInfo.cs">
       <Link>Properties\CommonAssemblyInfo.cs</Link>
     </Compile>
-    <Compile Include="..\PCLExt.Config.Desktop\DesktopJsonConfig.cs">
+    <Compile Include="..\PCLExt.Config.NetFX\DesktopJsonConfig.cs">
       <Link>DesktopJsonConfig.cs</Link>
     </Compile>
-    <Compile Include="..\PCLExt.Config.Desktop\DesktopYamlConfig.cs">
+    <Compile Include="..\PCLExt.Config.NetFX\DesktopYamlConfig.cs">
       <Link>DesktopYamlConfig.cs</Link>
     </Compile>
-    <Compile Include="..\PCLExt.Config.Portable\Extensions\YamlExtensions.cs">
+    <Compile Include="..\PCLExt.Config.Portable111\Extensions\YamlExtensions.cs">
       <Link>Extensions\YamlExtensions.cs</Link>
     </Compile>
-    <Compile Include="..\PCLExt.Config.Portable\Config.cs">
+    <Compile Include="..\PCLExt.Config.Portable111\Config.cs">
       <Link>Config.cs</Link>
     </Compile>
-    <Compile Include="..\PCLExt.Config.Portable\Extensions\FileSystemExtensions.cs">
+    <Compile Include="..\PCLExt.Config.Portable111\Extensions\FileSystemExtensions.cs">
       <Link>Extensions\FileSystemExtensions.cs</Link>
     </Compile>
-    <Compile Include="..\PCLExt.Config.Portable\Settings.cs">
+    <Compile Include="..\PCLExt.Config.Portable111\Settings.cs">
       <Link>Settings.cs</Link>
     </Compile>
-    <Compile Include="..\PCLExt.Config.Portable\Extensions\ConfigTypeExtensions.cs">
+    <Compile Include="..\PCLExt.Config.Portable111\Extensions\ConfigTypeExtensions.cs">
       <Link>Extensions\ConfigTypeExtensions.cs</Link>
     </Compile>
-    <Compile Include="..\PCLExt.Config.Portable\IConfigFile.cs">
+    <Compile Include="..\PCLExt.Config.Portable111\IConfigFile.cs">
       <Link>IConfigFile.cs</Link>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\PCLExt.Config.Portable.Abstractions\PCLExt.Config.Portable.Abstractions.csproj">
-      <Project>{3f8d0494-6ee2-47fe-b263-f09a5ea3d0b3}</Project>
-      <Name>PCLExt.Config.Portable.Abstractions</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\PCLExt.Config.Portable.Abstractions\PCLExt.Config.Portable.Abstractions.csproj">
-      <Project>{3f8d0494-6ee2-47fe-b263-f09a5ea3d0b3}</Project>
-      <Name>PCLExt.Config.Abstractions</Name>
-    </ProjectReference>
+    <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="packages.config" />
+    <ProjectReference Include="..\PCLExt.Config.Standard.Abstractions\PCLExt.Config.Standard.Abstractions.csproj">
+      <Project>{ed4ecddc-38b3-45be-9efc-4073cd72586f}</Project>
+      <Name>PCLExt.Config.Standard.Abstractions</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
 </Project>

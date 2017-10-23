@@ -1,4 +1,4 @@
 ﻿using System.Reflection;
 
-[assembly: AssemblyTitle("PCLExt.Config.Desktop")]
+[assembly: AssemblyTitle("PCLExt.Config.NetFX")]
 [assembly: AssemblyDescription("")]

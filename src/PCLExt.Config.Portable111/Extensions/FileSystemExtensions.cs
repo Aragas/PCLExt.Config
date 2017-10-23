@@ -1,6 +1,7 @@
 ﻿using System.IO;
 using System.Threading.Tasks;
 
+using PCLExt.Config.Exceptions;
 using PCLExt.FileStorage;
 using PCLExt.FileStorage.Extensions;
 

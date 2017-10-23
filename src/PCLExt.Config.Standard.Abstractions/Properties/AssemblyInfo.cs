@@ -2,4 +2,3 @@
 
 [assembly: AssemblyTitle("PCLExt.Config.Abstractions")]
 [assembly: AssemblyDescription("")]
-

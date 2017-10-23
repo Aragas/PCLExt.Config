@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2012/06/nuspec.xsd">
     <metadata>
         <id>PCLExt.Config</id>
-        <version>1.2.1.1</version>
+        <version>1.3.1</version>
         <title>PCL Extension - Config API</title>
         <authors>Aragas</authors>
         <owners>Aragas</owners>
@@ -16,48 +16,60 @@
         <dependencies>
             <group targetFramework=".NETFramework4.5">
                 <dependency id="Newtonsoft.Json" version="10.0.3" />
-                <dependency id="YamlDotNet" version="4.2.1" />
-                <dependency id="PCLExt.FileStorage" version="1.2.1.1" />
+                <dependency id="YamlDotNet" version="4.2.2" />
+                <dependency id="PCLExt.FileStorage" version="1.3.1" />
             </group>
             <group targetFramework="MonoAndroid1.0">
-                <dependency id="Newtonsoft.Json" version="10.0.3" />
-                <dependency id="YamlDotNet" version="4.2.1" />
-                <dependency id="PCLExt.FileStorage" version="1.2.1.1" />
+                <dependency id="Newtonsoft.Json" version="9.0.1" />
+                <dependency id="YamlDotNet" version="4.2.2" />
+                <dependency id="PCLExt.FileStorage" version="1.3.1" />
             </group>
             <group targetFramework="Xamarin.iOS1.0">
-                <dependency id="Newtonsoft.Json" version="10.0.3" />
-                <dependency id="YamlDotNet" version="4.2.1" />
-                <dependency id="PCLExt.FileStorage" version="1.2.1.1" />
+                <dependency id="Newtonsoft.Json" version="9.0.1" />
+                <dependency id="YamlDotNet" version="4.2.2" />
+                <dependency id="PCLExt.FileStorage" version="1.3.1" />
             </group>
 			<group targetFramework="netstandard2.0">
                 <dependency id="Newtonsoft.Json" version="10.0.3" />
-                <dependency id="YamlDotNet" version="4.2.1" />
-                <dependency id="PCLExt.FileStorage" version="1.2.1.1" />
+                <dependency id="YamlDotNet" version="4.2.2" />
+                <dependency id="PCLExt.FileStorage" version="1.3.1" />
+            </group>
+			<group targetFramework="uap10.0">
+                <dependency id="Newtonsoft.Json" version="10.0.3" />
+                <dependency id="YamlDotNet" version="4.2.2" />
+                <dependency id="PCLExt.FileStorage" version="1.3.1" />
             </group>
         </dependencies>
     </metadata>
     <files>
-        <file src="..\src\PCLExt.Config.Portable.Abstractions\bin\Release\PCLExt.Config.Abstractions.dll" target="lib\MonoAndroid10\PCLExt.Config.Abstractions.dll" />
-        <file src="..\src\PCLExt.Config.Portable.Abstractions\bin\Release\PCLExt.Config.Abstractions.xml" target="lib\MonoAndroid10\PCLExt.Config.Abstractions.xml" />	
+        <file src="..\src\PCLExt.Config.Android\bin\Release\PCLExt.Config.Abstractions.dll" target="lib\MonoAndroid10\PCLExt.Config.Abstractions.dll" />
+        <file src="..\src\PCLExt.Config.Android\bin\Release\PCLExt.Config.Abstractions.xml" target="lib\MonoAndroid10\PCLExt.Config.Abstractions.xml" />	
         <file src="..\src\PCLExt.Config.Android\bin\Release\PCLExt.Config.dll" target="lib\MonoAndroid10\PCLExt.Config.dll" />
         <file src="..\src\PCLExt.Config.Android\bin\Release\PCLExt.Config.xml" target="lib\MonoAndroid10\PCLExt.Config.xml" />
 		
-        <file src="..\src\PCLExt.Config.Portable.Abstractions\bin\Release\PCLExt.Config.Abstractions.dll" target="lib\net45\PCLExt.Config.Abstractions.dll" />
-        <file src="..\src\PCLExt.Config.Portable.Abstractions\bin\Release\PCLExt.Config.Abstractions.xml" target="lib\net45\PCLExt.Config.Abstractions.xml" />
-        <file src="..\src\PCLExt.Config.Desktop\bin\Release\PCLExt.Config.dll" target="lib\net45\PCLExt.Config.dll" />
-        <file src="..\src\PCLExt.Config.Desktop\bin\Release\PCLExt.Config.xml" target="lib\net45\PCLExt.Config.xml" />
+        <file src="..\src\PCLExt.Config.NetFX\bin\Release\PCLExt.Config.Abstractions.dll" target="lib\net45\PCLExt.Config.Abstractions.dll" />
+        <file src="..\src\PCLExt.Config.NetFX\bin\Release\PCLExt.Config.Abstractions.xml" target="lib\net45\PCLExt.Config.Abstractions.xml" />
+        <file src="..\src\PCLExt.Config.NetFX\bin\Release\PCLExt.Config.dll" target="lib\net45\PCLExt.Config.dll" />
+        <file src="..\src\PCLExt.Config.NetFX\bin\Release\PCLExt.Config.xml" target="lib\net45\PCLExt.Config.xml" />
 		
+		<file src="..\src\PCLExt.Config.Core\bin\Release\netstandard2.0\PCLExt.Config.dll" target="lib\netstandard2.0\PCLExt.Config.Abstractions.dll" />
+        <file src="..\src\PCLExt.Config.Core\bin\Release\netstandard2.0\PCLExt.Config.xml" target="lib\netstandard2.0\PCLExt.Config.Abstractions.xml" />
 		<file src="..\src\PCLExt.Config.Core\bin\Release\netstandard2.0\PCLExt.Config.dll" target="lib\netstandard2.0\PCLExt.Config.dll" />
         <file src="..\src\PCLExt.Config.Core\bin\Release\netstandard2.0\PCLExt.Config.xml" target="lib\netstandard2.0\PCLExt.Config.xml" />
 		
-        <file src="..\src\PCLExt.Config.Portable.Abstractions\bin\Release\PCLExt.Config.Abstractions.dll" target="lib\portable-net45+win8+wpa81\PCLExt.Config.Abstractions.dll" />
-        <file src="..\src\PCLExt.Config.Portable.Abstractions\bin\Release\PCLExt.Config.Abstractions.xml" target="lib\portable-net45+win8+wpa81\PCLExt.Config.Abstractions.xml" />
-        <file src="..\src\PCLExt.Config.Portable\bin\Release\PCLExt.Config.dll" target="lib\portable-net45+win8+wpa81\PCLExt.Config.dll" />
-        <file src="..\src\PCLExt.Config.Portable\bin\Release\PCLExt.Config.xml" target="lib\portable-net45+win8+wpa81\PCLExt.Config.xml" />
+        <file src="..\src\PCLExt.Config.Portable111\bin\Release\PCLExt.Config.Abstractions.dll" target="lib\portable-net45+win8+wpa81\PCLExt.Config.Abstractions.dll" />
+        <file src="..\src\PCLExt.Config.Portable111\bin\Release\PCLExt.Config.Abstractions.xml" target="lib\portable-net45+win8+wpa81\PCLExt.Config.Abstractions.xml" />
+        <file src="..\src\PCLExt.Config.Portable111\bin\Release\PCLExt.Config.dll" target="lib\portable-net45+win8+wpa81\PCLExt.Config.dll" />
+        <file src="..\src\PCLExt.Config.Portable111\bin\Release\PCLExt.Config.xml" target="lib\portable-net45+win8+wpa81\PCLExt.Config.xml" />
 		
-        <file src="..\src\PCLExt.Config.Portable.Abstractions\bin\Release\PCLExt.Config.Abstractions.dll" target="lib\Xamarin.iOS10\PCLExt.Config.Abstractions.dll" />
-        <file src="..\src\PCLExt.Config.Portable.Abstractions\bin\Release\PCLExt.Config.Abstractions.xml" target="lib\Xamarin.iOS10\PCLExt.Config.Abstractions.xml" />
+        <file src="..\src\PCLExt.Config.iOS\bin\Release\PCLExt.Config.Abstractions.dll" target="lib\Xamarin.iOS10\PCLExt.Config.Abstractions.dll" />
+        <file src="..\src\PCLExt.Config.iOS\bin\Release\PCLExt.Config.Abstractions.xml" target="lib\Xamarin.iOS10\PCLExt.Config.Abstractions.xml" />
         <file src="..\src\PCLExt.Config.iOS\bin\Release\PCLExt.Config.dll" target="lib\Xamarin.iOS10\PCLExt.Config.dll" />
         <file src="..\src\PCLExt.Config.iOS\bin\Release\PCLExt.Config.xml" target="lib\Xamarin.iOS10\PCLExt.Config.xml" />
+		
+		<file src="..\src\PCLExt.Config.UWP\bin\Release\PCLExt.Config.Abstractions.dll" target="lib\uap10.0\PCLExt.Config.Abstractions.dll" />
+		<file src="..\src\PCLExt.Config.UWP\bin\Release\PCLExt.Config.Abstractions.xml" target="lib\uap10.0\PCLExt.Config.Abstractions.xml" />
+		<file src="..\src\PCLExt.Config.UWP\bin\Release\PCLExt.Config.dll" target="lib\uap10.0\PCLExt.Config.dll" />
+		<file src="..\src\PCLExt.Config.UWP\bin\Release\PCLExt.Config.xml" target="lib\uap10.0\PCLExt.Config.xml" />
     </files>
 </package>

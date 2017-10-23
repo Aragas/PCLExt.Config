@@ -35,13 +35,6 @@
     <DocumentationFile>bin\Release\PCLExt.Config.xml</DocumentationFile>
   </PropertyGroup>
   <ItemGroup>
-    <!-- A reference to the entire .NET Framework is automatically included -->
-    <ProjectReference Include="..\PCLExt.Config.Portable.Abstractions\PCLExt.Config.Portable.Abstractions.csproj">
-      <Project>{3f8d0494-6ee2-47fe-b263-f09a5ea3d0b3}</Project>
-      <Name>PCLExt.Config.Abstractions</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
     <Compile Include="..\..\common\CommonAssemblyInfo.cs">
       <Link>Properties\CommonAssemblyInfo.cs</Link>
     </Compile>
@@ -54,15 +47,21 @@
     <Compile Include="Settings.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Reference Include="PCLExt.FileStorage, Version=1.2.1.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\PCLExt.FileStorage.1.2.1.1\lib\portable-net45+win8+wpa81\PCLExt.FileStorage.dll</HintPath>
+    <Reference Include="PCLExt.FileStorage, Version=1.3.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\PCLExt.FileStorage.1.3.1.0\lib\portable-net45+win8+wpa81\PCLExt.FileStorage.dll</HintPath>
     </Reference>
-    <Reference Include="PCLExt.FileStorage.Abstractions, Version=1.2.1.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\PCLExt.FileStorage.1.2.1.1\lib\portable-net45+win8+wpa81\PCLExt.FileStorage.Abstractions.dll</HintPath>
+    <Reference Include="PCLExt.FileStorage.Abstractions, Version=1.3.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\PCLExt.FileStorage.1.3.1.0\lib\portable-net45+win8+wpa81\PCLExt.FileStorage.Abstractions.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\PCLExt.Config.Standard.Abstractions\PCLExt.Config.Standard.Abstractions.csproj">
+      <Project>{ed4ecddc-38b3-45be-9efc-4073cd72586f}</Project>
+      <Name>PCLExt.Config.Standard.Abstractions</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
 </Project>
